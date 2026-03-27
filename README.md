@@ -2,7 +2,7 @@
 
 Generate AI selfie art portraits from text descriptions. Create cinematic portraits, anime-style illustrations, oil paintings, and artistic profile pictures. Returns a direct image URL instantly.
 
-> Powered by the **Neta AI image generation API** — the script calls `api.talesofai.com` (Neta backend) and images are served from `oss.talesofai.cn` (Neta CDN). Both are the same service as [neta.art/open](https://www.neta.art/open/).
+> Powered by the **Neta AI image generation API** (`api.talesofai.com`) — the same service as [neta.art/open](https://www.neta.art/open/).
 
 ## Install
 
