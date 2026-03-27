@@ -1,6 +1,8 @@
 # Selfie Art Generator
 
-Transform any selfie into stunning AI art — cinematic portrait, anime illustration, oil painting, or artistic photo makeover. Generate profile pictures, social media avatars, and personal portrait art with a single command.
+Generate AI selfie art portraits from text descriptions. Create cinematic portraits, anime-style illustrations, oil paintings, and artistic profile pictures. Returns a direct image URL instantly.
+
+Powered by the **Neta AI image generation API** — `api.talesofai.cn` is the Neta backend. Images are served from the Neta CDN (`oss.talesofai.cn`). Both domains belong to the same service as <https://www.neta.art/open/>.
 
 ## Install
 
@@ -14,7 +16,7 @@ clawhub install selfie-art-generator
 
 ## Token Setup
 
-This skill requires a Neta API token.
+This skill requires a Neta API token (free trial available).
 
 1. Get your free trial token at <https://www.neta.art/open/>
 2. Pass it via the `--token` flag:
@@ -24,22 +26,20 @@ export NETA_TOKEN=your_token_here
 node selfieartgenerator.js "your prompt" --token "$NETA_TOKEN"
 ```
 
-> Note: The `NETA_API_BASE_URL` environment variable can be used to override the API base URL if needed.
-
 ## Usage
 
 ```bash
-# Basic usage
-node selfieartgenerator.js "artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting, professional photography style, high resolution" --token "$NETA_TOKEN"
+# Cinematic portrait
+node selfieartgenerator.js "cinematic portrait, golden hour lighting, sharp facial details" --token "$NETA_TOKEN"
 
-# Anime style portrait
-node selfieartgenerator.js "anime illustration portrait, soft pastel colors, detailed eyes, Studio Ghibli inspired" --size portrait --style anime --token "$NETA_TOKEN"
+# Anime style
+node selfieartgenerator.js "anime illustration portrait, soft pastel colors, detailed eyes" --size portrait --style anime --token "$NETA_TOKEN"
 
 # Landscape cinematic shot
 node selfieartgenerator.js "cinematic outdoor portrait, dramatic lighting, bokeh background" --size landscape --style cinematic --token "$NETA_TOKEN"
 
-# Use a reference image (by picture UUID)
-node selfieartgenerator.js "oil painting portrait style, classic renaissance look" --ref <picture_uuid> --token "$NETA_TOKEN"
+# Oil painting style
+node selfieartgenerator.js "classical oil painting portrait, renaissance style, rich warm tones" --size portrait --token "$NETA_TOKEN"
 ```
 
 ## Options
@@ -62,39 +62,21 @@ node selfieartgenerator.js "oil painting portrait style, classic renaissance loo
 
 ## Output
 
-On success, the script prints the generated image URL to stdout:
+On success, prints the generated image URL to stdout:
 
 ```
-https://cdn.talesofai.cn/.../<image>.jpg
+https://oss.talesofai.cn/.../<image>.webp
 ```
-
-You can pipe this directly to a download command:
 
 ```bash
-curl -o output.jpg "$(node selfieartgenerator.js "cinematic portrait" --token "$NETA_TOKEN")"
-```
-
-## Examples
-
-**Cinematic profile picture:**
-```bash
-node selfieartgenerator.js "cinematic portrait, golden hour lighting, sharp facial features, professional headshot" --size portrait --style cinematic --token "$NETA_TOKEN"
-```
-
-**Anime avatar:**
-```bash
-node selfieartgenerator.js "anime style portrait, vibrant colors, detailed illustration, character art" --size square --style anime --token "$NETA_TOKEN"
-```
-
-**Oil painting:**
-```bash
-node selfieartgenerator.js "classical oil painting portrait, renaissance style, rich warm tones, museum quality" --size portrait --token "$NETA_TOKEN"
+# Pipe directly to download
+curl -o portrait.jpg "$(node selfieartgenerator.js "cinematic portrait" --token "$NETA_TOKEN")"
 ```
 
 ## Example Output
 
 ```bash
-node selfieartgenerator.js "artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting, professional photography style, high resolution"
+node selfieartgenerator.js "artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting" --token "$NETA_TOKEN"
 ```
 
 ![Example output](https://oss.talesofai.cn/picture/4df8cb1b-745d-4af7-a80b-60aef36f6637.webp)
