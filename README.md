@@ -90,3 +90,13 @@ node selfieartgenerator.js "anime style portrait, vibrant colors, detailed illus
 ```bash
 node selfieartgenerator.js "classical oil painting portrait, renaissance style, rich warm tones, museum quality" --size portrait --token "$NETA_TOKEN"
 ```
+
+## Example Output
+
+```bash
+node selfieartgenerator.js "artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting, professional photography style, high resolution"
+```
+
+![Example output](https://oss.talesofai.cn/picture/4df8cb1b-745d-4af7-a80b-60aef36f6637.webp)
+
+> Prompt: *"artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting, professional photography style, high resolution"*
