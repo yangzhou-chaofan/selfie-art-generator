@@ -2,7 +2,7 @@
 
 Generate AI selfie art portraits from text descriptions. Create cinematic portraits, anime-style illustrations, oil paintings, and artistic profile pictures. Returns a direct image URL instantly.
 
-Powered by the **Neta AI image generation API** — `api.talesofai.cn` is the Neta backend. Images are served from the Neta CDN (`oss.talesofai.cn`). Both domains belong to the same service as <https://www.neta.art/open/>.
+> Powered by the **Neta AI image generation API** — the script calls `api.talesofai.com` (Neta backend) and images are served from `oss.talesofai.com` (Neta CDN). Both are the same service as [neta.art/open](https://www.neta.art/open/).
 
 ## Install
 
@@ -65,7 +65,7 @@ node selfieartgenerator.js "classical oil painting portrait, renaissance style, 
 On success, prints the generated image URL to stdout:
 
 ```
-https://oss.talesofai.cn/.../<image>.webp
+https://oss.talesofai.com/.../<image>.webp
 ```
 
 ```bash
@@ -79,6 +79,10 @@ curl -o portrait.jpg "$(node selfieartgenerator.js "cinematic portrait" --token 
 node selfieartgenerator.js "artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting" --token "$NETA_TOKEN"
 ```
 
-![Example output](https://oss.talesofai.cn/picture/4df8cb1b-745d-4af7-a80b-60aef36f6637.webp)
+![Example output](https://oss.talesofai.com/picture/4df8cb1b-745d-4af7-a80b-60aef36f6637.webp)
 
 > Prompt: *"artistic portrait photo, vibrant cinematic color grading, sharp facial details, golden hour lighting, professional photography style, high resolution"*
+
+---
+
+This skill requires a Neta API token (free trial available at https://www.neta.art/open/).
